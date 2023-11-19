@@ -76,7 +76,7 @@ def calculate_determinante(input_matrix): # function to calculate determinante
     return determinante # returns determinante for singularity checks
 
 
-def gaussian_elemination(input_matrix, identity_matrix): #Inspired by: https://steemit.com/hive-181430/@sheham-sh/siz-tutorial-or-or-gauss-jordan-method-in-python-without-numpy-or-or-20-to-siz-official-or-or-by-sheham-sh
+def gaussian_elemination(input_matrix, identity_matrix): #Concept used by: https://steemit.com/hive-181430/@sheham-sh/siz-tutorial-or-or-gauss-jordan-method-in-python-without-numpy-or-or-20-to-siz-official-or-or-by-sheham-sh
 
     if check_matrix_format(input_matrix): #checks the matrix's format
 
@@ -96,7 +96,7 @@ def gaussian_elemination(input_matrix, identity_matrix): #Inspired by: https://s
             for row in range(number_rows): # iterates amount of number of rows times 
                 if row != column: # check that we don't manipulate valies on the diagonal
                     scalar = input_matrix[row][column] # reads the scalar in every other position
-                    for j in range(number_columns): # and now changes the values depending on the scalar before, to eleminate them and to perform the same operation on the identity matrix
+                    for j in range(number_columns): # and now changes the values depending on the scalar before, to eleminate them and to perform the same operation on the identity matrix, this and the next two lines written with the help from chatgpt
                         input_matrix[row][j] -= scalar * input_matrix[column][j] # eleminates the value
                         identity_matrix[row][j] -= scalar * identity_matrix[column][j] # does the same with the identyty matrix and thereby creating the inverse
         return identity_matrix # returns the inverted matrix
